@@ -18,12 +18,23 @@
     padding: 24px;
     text-align: center;
   }
-  .logo { font-size: 64px; margin-bottom: 12px; }
-  h1 { font-size: 36px; font-weight: 900; letter-spacing: 6px; }
-  .tagline { font-size: 14px; letter-spacing: 3px; color: #8a9a60; margin: 12px 0 40px; text-transform: uppercase; }
+  .logo {
+    width: min(280px, 70vw);
+    height: auto;
+    border-radius: 20px;
+    margin-bottom: 28px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+  }
+  .tagline {
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: #8a9a60;
+    margin-bottom: 32px;
+    text-transform: uppercase;
+  }
   .btn {
     display: inline-block;
-    padding: 16px 40px;
+    padding: 16px 48px;
     background: #e8d87f;
     color: #1a1f0f;
     font-weight: 800;
@@ -36,8 +47,7 @@
 </style>
 </head>
 <body>
-<div class="logo">🪖</div>
-<h1>EFEDROS</h1>
+<img class="logo" src="efedros_logo.jpg" alt="EFEDROS">
 <p class="tagline">Στρατιωτικό Quiz για Έλληνες</p>
 <a class="btn" href="https://play.google.com/store/apps/details?id=gr.efedros.app">Κατέβασε Δωρεάν</a>
 </body>

@@ -18,19 +18,18 @@
     padding: 24px;
     text-align: center;
   }
-  .logo { font-size: 48px; margin-bottom: 8px; }
-  h1 {
-    font-size: 28px;
-    font-weight: 800;
-    letter-spacing: 4px;
-    color: #e8d87f;
-    margin-bottom: 4px;
+  .logo {
+    width: min(200px, 55vw);
+    height: auto;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5);
   }
   .subtitle {
-    font-size: 13px;
+    font-size: 11px;
     letter-spacing: 2px;
     color: #8a9a60;
-    margin-bottom: 40px;
+    margin-bottom: 32px;
     text-transform: uppercase;
   }
   .card {
@@ -54,7 +53,6 @@
     font-weight: 900;
     letter-spacing: 8px;
     color: #e8d87f;
-    margin-bottom: 4px;
     font-variant-numeric: tabular-nums;
   }
   .challenge-note {
@@ -77,28 +75,19 @@
     border: none;
     margin-bottom: 12px;
   }
-  .btn-primary {
-    background: #e8d87f;
-    color: #1a1f0f;
-  }
+  .btn-primary { background: #e8d87f; color: #1a1f0f; }
   .btn-secondary {
     background: transparent;
     border: 1px solid #4a5a2a;
     color: #8a9a60;
     font-size: 13px;
   }
-  .footer {
-    font-size: 11px;
-    color: #4a5a2a;
-    letter-spacing: 1px;
-    margin-top: 16px;
-  }
+  .footer { font-size: 11px; color: #4a5a2a; margin-top: 16px; }
 </style>
 </head>
 <body>
-<div class="logo">🪖</div>
-<h1>EFEDROS</h1>
-<p class="subtitle">Στρατιωτικό Quiz</p>
+<img class="logo" src="../efedros_logo.jpg" alt="EFEDROS">
+<p class="subtitle">Στρατιωτικό Quiz για Έλληνες</p>
 
 <div class="card">
   <div class="card-title">Κωδικός Πρόσκλησης</div>
@@ -106,7 +95,7 @@
   <div class="challenge-note">Κατέβασε το app και εισήγαγε τον κωδικό για να παίξεις</div>
 </div>
 
-<a class="btn btn-primary" id="playstore-btn" href="https://play.google.com/store/apps/details?id=gr.efedros.app">
+<a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=gr.efedros.app">
   Κατέβασε το EFEDROS
 </a>
 <a class="btn btn-secondary" id="open-app-btn" href="#">
