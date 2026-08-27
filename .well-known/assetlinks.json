@@ -1,0 +1,10 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "gr.efedros.app",
+    "sha256_cert_fingerprints": [
+      "24:4A:D9:98:E7:72:88:83:96:9F:9C:4C:9F:80:7B:0B:D3:7E:62:E0:39:18:E8:4A:98:B4:23:DD:B2:53:9A:35"
+    ]
+  }
+}]
