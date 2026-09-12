@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Πολιτική Απορρήτου — ΕΦΕΔΡΟΣ</title>
+<style>
+  :root {
+    --ground:  #23261A;
+    --surface: #2B2F24;
+    --ink:     #E8E3D3;
+    --muted:   #C9BD8F;
+    --accent:  #D4C55A;
+    --line:    #3A3F2B;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "Roboto Condensed", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding-inline: 20px;
+    padding-block: 32px 64px;
+  }
+  h1 {
+    font-size: 1.6rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 6px;
+    text-wrap: balance;
+  }
+  .updated { color: var(--muted); font-size: 0.9rem; margin: 0 0 28px; }
+  h2 {
+    font-size: 1.05rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 32px 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--line);
+  }
+  p, li { max-width: 62ch; }
+  ul { padding-left: 1.2em; }
+  li { margin-bottom: 6px; }
+  a { color: var(--accent); }
+  strong { color: #fff; }
+  .table-scroll { overflow-x: auto; margin: 12px 0; }
+  table { border-collapse: collapse; width: 100%; min-width: 460px; font-size: 0.94rem; }
+  th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--accent); text-transform: uppercase; font-size: 0.76rem; letter-spacing: 0.08em; }
+  .box {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    padding: 14px 18px;
+    margin: 14px 0;
+  }
+  footer { margin-top: 40px; color: var(--muted); font-size: 0.88rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Πολιτική Απορρήτου — ΕΦΕΔΡΟΣ</h1>
+  <p class="updated">Τελευταία ενημέρωση: Σεπτέμβριος 2026</p>
+
+  <h2>Δεδομένα που συλλέγουμε</h2>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>Κατηγορία</th><th>Τι συλλέγουμε</th><th>Γιατί</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Λογαριασμός</td><td>Firebase UID, email (μόνο αν συνδεθείς με Google)</td><td>Αναγνώριση παίκτη</td></tr>
+        <tr><td>Προφίλ</td><td>Ψευδώνυμο, παράταξη, βαθμός, ELO</td><td>Κατατάξεις, PvP</td></tr>
+        <tr><td>Gameplay</td><td>Βαθμολογίες, νίκες, βαρέλια, χρυσός</td><td>Πρόοδος παίκτη</td></tr>
+        <tr><td>Chat</td><td>Μηνύματα γενικά, παράταξης και προσωπικά</td><td>Λειτουργία chat</td></tr>
+        <tr><td>Analytics</td><td>Ανώνυμα συμβάντα (έναρξη κουίζ, άνοδος βαθμού κ.λπ.)</td><td>Βελτίωση εμπειρίας</td></tr>
+        <tr><td>Crash reports</td><td>Αυτόματα αρχεία σφαλμάτων (Crashlytics)</td><td>Σταθερότητα εφαρμογής</td></tr>
+        <tr><td>Διαφημίσεις</td><td>Αλληλεπίδραση με rewarded διαφημίσεις (AdMob)</td><td>Μόνο opt-in</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Τι δεν συλλέγουμε</h2>
+  <ul>
+    <li>Δεν πουλάμε δεδομένα σε τρίτους.</li>
+    <li>Δεν συλλέγουμε τοποθεσία.</li>
+    <li>Δεν αποκτάμε πρόσβαση σε επαφές ή φωτογραφίες.</li>
+  </ul>
+
+  <h2>Διαφημίσεις και συγκατάθεση</h2>
+  <p>Οι διαφημίσεις είναι <strong>opt-in</strong>: εμφανίζονται μόνο όταν τις
+  ζητήσεις εσύ, για να κερδίσεις βαρέλια ή περιστροφή στον τροχό. Δεν
+  υπάρχουν banners ούτε διαφημίσεις που διακόπτουν το παιχνίδι.</p>
+  <p>Αν βρίσκεσαι στον Ευρωπαϊκό Οικονομικό Χώρο ή στο Ηνωμένο Βασίλειο, πριν
+  από την πρώτη διαφήμιση εμφανίζεται φόρμα συγκατάθεσης της Google, όπου
+  επιλέγεις αν οι διαφημίσεις θα είναι εξατομικευμένες. Αν αρνηθείς, δεν
+  γίνεται κανένα αίτημα για εξατομικευμένη διαφήμιση. Μπορείς να αλλάξεις την
+  επιλογή σου όποτε θέλεις από τις ρυθμίσεις της εφαρμογής.</p>
+
+  <h2>Διαγραφή λογαριασμού και δεδομένων</h2>
+  <div class="box">
+    <p><strong>Μέσα από την εφαρμογή:</strong> Προφίλ →
+    <strong>Διαγραφή Λογαριασμού</strong>. Διαγράφονται οριστικά ο λογαριασμός
+    σου, η πρόοδος, οι κάρτες, το δημόσιο προφίλ, οι φίλοι, τα αιτήματα φιλίας
+    και τα μηνύματά σου. Δεν υπάρχει αναίρεση.</p>
+    <p style="margin-bottom:0"><strong>Εναλλακτικά</strong>, στείλε αίτημα
+    διαγραφής στο <a href="mailto:fouskaskailoulou@gmail.com">fouskaskailoulou@gmail.com</a>.</p>
+  </div>
+  <p>Τα δεδομένα διαγράφονται άμεσα κατά την εκτέλεση του αιτήματος. Δεν
+  διατηρούμε αντίγραφα ασφαλείας δεδομένων παικτών μετά τη διαγραφή.</p>
+
+  <h2>Παιδιά</h2>
+  <p>Η εφαρμογή δεν απευθύνεται σε παιδιά κάτω των 13 ετών. Δεν συλλέγουμε εν
+  γνώσει μας δεδομένα ανηλίκων.</p>
+
+  <h2>Τρίτοι πάροχοι</h2>
+  <ul>
+    <li><strong>Firebase</strong> (Google) — ταυτοποίηση, βάση δεδομένων,
+    analytics, crash reports, ειδοποιήσεις</li>
+    <li><strong>Google AdMob</strong> — opt-in rewarded διαφημίσεις</li>
+  </ul>
+  <p>Οι πάροχοι λειτουργούν βάσει των δικών τους πολιτικών απορρήτου.</p>
+
+  <h2>Αλλαγές</h2>
+  <p>Τυχόν αλλαγές στην πολιτική θα αναρτηθούν σε αυτή τη σελίδα. Η συνέχιση
+  χρήσης της εφαρμογής αποτελεί αποδοχή των αλλαγών.</p>
+
+  <footer>
+    ΕΦΕΔΡΟΣ · Επικοινωνία:
+    <a href="mailto:fouskaskailoulou@gmail.com">fouskaskailoulou@gmail.com</a>
+  </footer>
+
+</div>
+</body>
+</html>

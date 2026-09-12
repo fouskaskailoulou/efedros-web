@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EFEDROS — Πρόσκληση</title>
+<meta name="robots" content="noindex">
+
+<!-- Preview card for the apps invitation links get pasted into -->
+<meta property="og:title" content="EFEDROS — Πρόσκληση σε Μονομαχία">
+<meta property="og:description" content="Σε προκαλώ σε μονομαχία γνώσεων. Άνοιξε τον σύνδεσμο για να δεχτείς.">
+<meta property="og:image" content="https://efedros.app/efedros_logo.jpg">
+<meta property="og:type" content="website">
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #1a1f0f;
+    color: #e8d87f;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    text-align: center;
+  }
+  .logo {
+    width: min(200px, 55vw);
+    height: auto;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+  }
+  .subtitle {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #8a9a60;
+    margin-bottom: 32px;
+    text-transform: uppercase;
+  }
+  .card {
+    background: #252d14;
+    border: 1px solid #4a5a2a;
+    border-radius: 16px;
+    padding: 28px 32px;
+    max-width: 360px;
+    width: 100%;
+    margin-bottom: 24px;
+  }
+  .card-title {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #8a9a60;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .challenge-code {
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: 8px;
+    color: #e8d87f;
+    font-variant-numeric: tabular-nums;
+  }
+  .challenge-note {
+    font-size: 12px;
+    color: #6a7a4a;
+    margin-top: 8px;
+    line-height: 1.5;
+  }
+  .btn {
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    margin-bottom: 12px;
+  }
+  .btn-primary { background: #e8d87f; color: #1a1f0f; }
+  .btn-secondary {
+    background: transparent;
+    border: 1px solid #4a5a2a;
+    color: #8a9a60;
+    font-size: 13px;
+  }
+  .btn:focus-visible { outline: 3px solid #e8d87f; outline-offset: 3px; }
+  .footer { font-size: 11px; color: #4a5a2a; margin-top: 16px; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+
+<!-- Absolute src, not ../ : this file is served for ANY unmatched path, and a
+     relative URL would resolve against the requested path, so it would break
+     on anything that is not exactly one level deep. -->
+<img class="logo" src="/efedros_logo.jpg" alt="EFEDROS">
+<p class="subtitle">Στρατιωτικό Quiz για Έλληνες</p>
+
+<div id="invite" hidden>
+  <div class="card">
+    <div class="card-title">Κωδικός Πρόσκλησης</div>
+    <div class="challenge-code" id="code">—</div>
+    <div class="challenge-note" id="note">
+      Άνοιξε τον κωδικό στο app για να δεχτείς τη μονομαχία
+    </div>
+  </div>
+  <a class="btn btn-primary" id="open-app-btn" href="#">Άνοιξε στο EFEDROS</a>
+  <a class="btn btn-secondary" href="https://play.google.com/store/apps/details?id=gr.efedros.app">
+    Δεν έχω το app — κατέβασέ το
+  </a>
+  <p class="challenge-note" style="max-width:360px">
+    Αν ο σύνδεσμος άνοιξε μέσα στο Instagram, στο Messenger ή στο Viber,
+    αυτά χρησιμοποιούν δικό τους browser. Πάτα το κουμπί πιο πάνω.
+  </p>
+</div>
+
+<div id="missing" hidden>
+  <div class="card">
+    <div class="card-title">404</div>
+    <div class="challenge-note" style="margin-top:0">
+      Η σελίδα δεν βρέθηκε. Ο σύνδεσμος μπορεί να είναι λάθος ή να έχει λήξει.
+    </div>
+  </div>
+  <a class="btn btn-primary" href="/">Αρχική σελίδα</a>
+</div>
+
+<p class="footer">© EFEDROS</p>
+
+<script>
+  // GitHub Pages serves this file for any path it has no file for, and leaves
+  // the requested URL in the address bar. Invitation links are
+  // /challenge/{code}, for which there is no file, so this is where they land.
+  //
+  // The code is six characters from the app's ambiguity-free alphabet — no
+  // I, O, 0 or 1 — so anything else is a real 404 rather than a mangled code.
+  (function () {
+    var m = location.pathname.match(
+      /^\/challenge\/([ABCDEFGHJKLMNPQRSTUVWXYZ23456789]{6})\/?$/i
+    );
+    if (!m) {
+      document.getElementById('missing').hidden = false;
+      return;
+    }
+    var code = m[1].toUpperCase();
+    document.getElementById('code').textContent = code;
+    // The custom scheme, not the https link: only this app claims efedros://,
+    // so it needs no domain verification and no browser can swallow it. Left
+    // on a real tap on purpose — in-app browsers block unprompted navigation
+    // to unknown schemes, and an auto-redirect breaks the back button too.
+    document.getElementById('open-app-btn').href = 'efedros://challenge/' + code;
+    document.getElementById('invite').hidden = false;
+  })();
+</script>
+</body>
+</html>
